@@ -1,0 +1,328 @@
+/*
+
+Use Tailwind CSS for:
+- Component-specific styling
+- Layout and positioning (flex, grid, spacing, etc)
+- Responsive design
+- Quick prototyping
+- Small style adjustments
+- When you need consistent design tokens
+
+
+Use App.css for:
+- Global styles (like your body and root styles)
+- Complex animations
+- Custom design patterns that repeat across components
+- Styles that would be too verbose in Tailwind
+- Default theme variables
+- CSS resets
+- Third-party component overrides
+
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  /* max-width: 1280px; */
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
+  /* text-align: center; */
+  width: 100%;  
+  color: black;
+
+}
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background-color: #FAFAF8;
+
+}
+
+header {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: black;
+  /*height: 80px;*/
+  /*font-size: 1.25rem;*/
+  /*gap: 20px;*/
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+.logo_link:any-link {
+color: black;
+
+}
+
+.menu-services {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Switch to horizontal at 768px and above */
+/*
+@media (min-width: 768px) {
+  .menu-services {
+    flex-direction: row;
+  }
+}
+*/
+
+
+footer {
+  background-color: #262626;
+  color:#D1D5DB;
+  /*
+  padding-left: 40px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  */
+}
+/*
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: first baseline;
+}
+*/
+/*
+.footer-copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+*/
+
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  align-self: flex-start;
+}
+
+.error-message {
+  color: red;
+  font-size: larger;
+}
+
+.add-ingredient-form fieldset {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  gap: 1rem;
+  border: 0;
+}
+
+/*
+fieldset:disabled {
+  cursor: not-allowed;
+  background-color: rgb(213, 213, 213);
+}
+
+fieldset:disabled > button, input {
+  color: gray;
+  cursor: not-allowed;
+}
+
+fieldset:enabled > button {  
+  cursor: unset;
+  color: white;
+}
+
+fieldset:enabled > input {  
+  cursor: unset;
+  cursor:default;
+  background-color: white; 
+}
+*/
+
+.add-ingredient-form label {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+
+.add-ingredient-form input {
+  background-color: white;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid #D1D5DB;
+  color: black;  
+  padding: 9px 14px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  flex-grow: 1;
+}
+
+
+/*
+.add-ingredient-form button {
+  border-radius: 8px;
+  border: none;
+  padding: 0.8em 1.2em;
+  font-size: 0.875em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #141413;
+  color: #FAFAF8;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  width: 200px;
+  align-self: flex-start;
+}
+.add-ingredient-form button::before {
+  content: "+";
+  margin-right: 6px;
+  
+}
+.add-ingredient-form button:hover {
+  border-color: #646cff;
+}
+.add-ingredient-form > button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+*/
+
+section.form_practice {
+  background-color: #c9c9c9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul.ingredients-list {
+  margin-bottom: 48px;
+}
+
+ul.ingredients-list > li {
+  color: #475467;
+  line-height: 28px;
+}
+
+.ai-service-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  /* align-items: center; */
+  border-radius: 8px;
+  background: #F0EFEB;
+  padding: 20px 20px;
+}
+
+.get-recipe-container {
+  display: flex;
+  /*justify-content: space-between;*/
+  justify-content:left;
+  gap: 32px;
+  align-items: center;
+  border-radius: 8px;
+  background: #dcdbd8;
+  padding: 10px 28px;
+  
+}
+
+.get-recipe-container h3 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.get-recipe-container p {
+  color: #6B7280;
+  font-size: 0.875rem;
+  line-height: 20px;
+}
+
+/*
+.get-recipe-container button {
+  border: none;
+  border-radius: 6px;
+  background: #D17557;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  color: #FAFAF8;
+  padding: 9px 17px;
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+*/
+
+/* USER BUTTON TO COPY RECIPES */
+/*
+.recipe-header {  
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 1rem;  
+}
+*/
+
+/*
+.copy-button {
+  padding: 0.5rem 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.copy-button:hover {
+  background-color: #45a049;
+}
+
+.copy-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+*/
+
+.copy-message {
+  color: #1e4520;
+  font-size: 0.9rem;
+}
+
+
+/* orangy button */
+button {
+  border: none;
+  border-radius: 6px;
+  background: #D17557;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  color: #FAFAF8;
+  padding: 9px 17px;
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.cta-button {
+  font-size: large;
+}
+
+.suggested-recipe-container {
+  color: #475467;
+  line-height: 28px;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.suggested-recipe-container ul li, .suggested-recipe-container ol li {
+  margin-bottom: 8px;
+}
