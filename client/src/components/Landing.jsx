@@ -9,9 +9,9 @@ export default function Landing() {
             <main className="p-8">
                 <h1>SCD Guide | AI-Powered Specific Carbohydrate Diet Assistant</h1>
                 <div className="text-4xl leading-normal">Have Questions about the SCD?</div>
-                <div className="text-2xl leading-normal">Your AI SCD Coach has the answers.</div>
+                <div className="text-2xl leading-normal">Your AI SCD Guide has the answers.</div>
                 <div>If you are new to the Specific Carbohydrate Diet, you may have questions. 
-                    With SCD Coach, you can get your questions answered
+                    With SCD Guide, you can get your questions answered
                     at any time you need, 24/7, 365 days a year with empathy, and endless patience.
                 </div>
                 {/*
@@ -49,7 +49,7 @@ export default function Landing() {
                 */}
                 <div className="text-2xl leading-normal pt-8">Transform Your SCD Journey with Personalized AI Support</div>
 
-                <p className='leading-normal'>Get instant, reliable guidance for the Specific Carbohydrate Diet from our specialized AI coach that helps you:</p>
+                <p className='leading-normal'>Get instant, reliable guidance for the Specific Carbohydrate Diet from our specialized AI guide that helps you:</p>
 
                 <ul className="list-disc list-inside">
                     <li><strong>Create SCD-Legal Recipes</strong> from ingredients you have on hand</li>
@@ -67,7 +67,7 @@ export default function Landing() {
                 </ul>
 
                 <p className='pt-8'>
-                    Start your supported SCD journey today with an AI coach that understands your dietary needs and helps you succeed one meal at a time.
+                    Start your supported SCD journey today with an AI guide that understands your dietary needs and helps you succeed one meal at a time.
                 </p>
 
                 {/*<LoginButton />*/}

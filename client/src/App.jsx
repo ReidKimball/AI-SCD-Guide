@@ -6,7 +6,7 @@ import Menu_Services from './components/Menu_Services'
 import About from './components/About'
 import Profile from './components/Profile'
 import HealthDashboard from './components/HealthDashboard'
-import Landing from './components/Landing'
+import LandingBuyPage from './components/LandingBuyPage'
 import Recipe_Service from './components/Recipe_Service'
 import Meal_Service from './components/Meal_Service'
 import Coach_Service from './components/Coach_Service'
@@ -26,7 +26,7 @@ function App() {
         <Header />        
         <Menu_Services /> {/* this needs to be protected by a login */}
         <Routes>
-          <Route path="/" element={<Landing />} />
+          <Route path="/" element={<LandingBuyPage />} />
           <Route path='/about' element={<About />} />
           {/* these below need to be protected by a login */}          
           <Route path="/profile" element={<Profile />} />

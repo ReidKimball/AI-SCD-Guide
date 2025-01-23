@@ -63,10 +63,10 @@ function Profile() {
 
   return (
     <>
-        <div className='p-8'>
-          <div className='text-4xl pb-8'>Hello {user.nickname}</div>
-          <div className='text-2xl pb-8'>Email: {user.email}</div>
-          <HealthDashboard />
+      <div className='p-8'>
+        <div className='text-4xl pb-8'>Hello {user.nickname}</div>
+        <div className='text-2xl pb-8'>Email: {user.email}</div>
+        <HealthDashboard />
           {/* 
           pseudo code
           connect to the database
@@ -75,7 +75,9 @@ function Profile() {
           display the subscription status
           if subscrption status is free, show the paid option card to buy
           */}
-          <div className='flex flex-row gap-4'>
+        
+        {/*
+        <div className='grid md:grid-cols-2 gap-8 py-16 justify-center justify-items-center'>
           <div className='container sm shadow-lg bg-slate-300 rounded-md w-96 h-96 p-8'>
             <div className='text-3xl'>SCD Guide - Free</div>
             <div className='text-2xl'>Your 24/7 Companion for:</div>
@@ -87,8 +89,9 @@ function Profile() {
               <li>Recipe inspiration</li>
               <li>Meal modifications</li>
             </ul>
+            <p>FREE</p>
             <button className="cta-button bg-blue-800 shadow-sm hover:shadow-md">Current</button>
-            </div>
+          </div>
           
           <div className='container sm shadow-lg bg-slate-300 rounded-md w-96 h-96 p-8'>
             <div className='text-3xl'>SCD Guide - Pro</div>
@@ -101,14 +104,15 @@ function Profile() {
               <li>Recipe inspiration</li>
               <li>Meal modifications</li>
             </ul>
-            <button className="cta-button bg-blue-800 shadow-sm hover:shadow-md">$25 - Buy</button>
-            </div>
+            <p>$49/mo</p>
+            <button className="cta-button bg-blue-800 shadow-sm hover:shadow-md">Buy</button>
           </div>
-          </div>
-          <div className='p-8'>
-          {/*<LogoutButton />*/}
-          
-          </div>
+        </div>
+        */}
+      </div>      
+      <div className='p-8'>
+        {/*<LogoutButton />*/}  
+      </div>
     </>
   )
 }

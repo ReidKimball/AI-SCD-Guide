@@ -22,9 +22,11 @@ export default function Menu_Services() {
                     <Link to="/coach_service">
                         <Button variant='contained' startIcon={<MessageCircleQuestion />} size='large' className="flex-none w-60 cta-button bg-blue-800 shadow-sm hover:shadow-md">Ask Guide</Button>
                     </Link>
+                    {/* 
                     <Link to="/ai_services">
                         <Button variant='contained' startIcon={<Grid />} size='large' className="flex-none w-60 cta-button bg-blue-800 shadow-sm hover:shadow-md">All Services</Button>
                     </Link>
+                    */}
                 </>
             ) : (<div></div>)
         }
