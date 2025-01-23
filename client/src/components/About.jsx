@@ -8,7 +8,8 @@ export default function About() {
         <>
             <main className="p-8">
                 <div className="text-6xl leading-normal text-center">About</div>
-                <div className="flex gap-8 mb-8">
+
+                <div className='grid md:grid-cols-2 gap-8 py-16 justify-center justify-items-center'> {/*className="flex gap-8 mb-8"*/}
                     <div className="flex-shrink-1">
                         <img 
                             src={profileImage} 
@@ -21,8 +22,7 @@ export default function About() {
                         <p className='leading-normal'>
                         I'll never forget the date, February 13, 1997. I was diagnosed with Crohn's disease, a debilitating inflammatory bowel disease. It was 8 years
                         later when I started using the Specific Carbohydrate Diet to help me manage my symptoms. Over the years I regained much of my health thanks to the SCD.
-                        </p>
-                        
+                        </p>                        
 
                         <p className='leading-normal pt-4'>I'm Reid Kimball, and I developed SCD Guide to help others succeed on the SCD.</p> 
 
@@ -34,6 +34,9 @@ export default function About() {
                         book, "Breaking the Vicious Cycle" by Elaine Gottschall.</p> 
 
                         <p className='leading-normal pt-4'>If you have any questions about this web app, reach out to: [INSERT EMAIL]</p>
+                        
+                        <p className='text-base py-8'>(1) <a href='https://pmc.ncbi.nlm.nih.gov/articles/PMC10158462/' target='_blank'>Perspectives on Specific Carbohydrate Diet Education from Inflammatory Bowel Disease Patients and Caregivers: A Needs Assessment</a></p>
+
                     </div>
                 
 
