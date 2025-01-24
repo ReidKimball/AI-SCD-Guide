@@ -40,3 +40,4 @@ backend/.env
 !backend/example-.env
 client/src/_backups
 _backups
+LLM System Prompt.md
