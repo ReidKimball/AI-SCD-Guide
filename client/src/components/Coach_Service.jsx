@@ -6,11 +6,14 @@ import { getInfoFromSCDCoach } from '../ai.js'
 import { Button } from '@mui/material'
 import { MessageCircleQuestion } from 'lucide-react'
 import TextField from '@mui/material/TextField';
+import { LoadingSpinner } from './LoadingSpinner.jsx'
 
 export default function Coach_Service() {
     // create an empty state array called ingredients and a function addIngredients
     const [coachingText, setCoachingText] = useState("")
     const [formDisabled, setFormDisabled] = useState(false)
+    const [isAILoading, setIsAILoading] = useState(false)
+    console.log('isAILoading is set to:', isAILoading)
 
     // this is used below to send as a prop to the Meal_AI component, in the Meal_AI.jsx
     const coachingSection = useRef(null) // if using this on a DOM node best practice to set to null
@@ -27,10 +30,12 @@ export default function Coach_Service() {
     useEffect(() => {
         console.log(`entered useEffect for formDisabled, status is: ${formDisabled}`)
         setFormDisabled(false)
+        setIsAILoading(false)
     }, [coachingText])
 
     useEffect(() => {
         console.log('🟡 formDisabled changed to:', formDisabled)
+        console.log('🟡 isAILoading changed to:', isAILoading)
     }, [formDisabled])
 
     async function getCoaching(formData) {
@@ -43,6 +48,7 @@ export default function Coach_Service() {
 
     function disableUserForm(formData) {
         setFormDisabled(true)
+        setIsAILoading(true)
         console.log('🔵 2. Set form disabled to true')
         getCoaching(formData)
     }
@@ -57,6 +63,8 @@ export default function Coach_Service() {
     return (
         <>
             <main>
+                {isAILoading && <div className='loading-spinner'><LoadingSpinner /></div>}
+                
                 <div className='ai-service-container'>
                     <div className='text-3xl'>Ask SCD Guide Anything</div>
                     <p>Ask SCD Guide any question you have about SCD. How to manage stress, relationships, and make the SCD easier to do are all valid questions. Think of this service as having your own private coach to talk about anything that is challenging in your SCD healing journey.</p>
@@ -71,16 +79,7 @@ export default function Coach_Service() {
                                 alt="question text field"
                                 disabled={formDisabled}
                             />
-                            {/*
-                            <input 
-                                name="userQuery"
-                                placeholder="e.g. why aren't complex carbohydrates allowed on SCD?" 
-                                aria-label="Add question" 
-                                type="text" className="userInput" 
-                                alt="question text field"
-                                
-                            />
-                            */}
+                            
                             <Button disabled={formDisabled} type='submit' variant='contained' startIcon={<MessageCircleQuestion />} size='large' >Ask Guide</Button>
                             
                         </fieldset>

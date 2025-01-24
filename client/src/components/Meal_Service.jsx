@@ -6,12 +6,14 @@ import { getMealFromSCDChef } from '../ai.js'
 import { Button } from '@mui/material'
 import { ForkKnife } from 'lucide-react'
 import TextField from '@mui/material/TextField';
+import { LoadingSpinner } from './LoadingSpinner.jsx'
 
 export default function Meal_Service() {
     // create an empty state array called ingredients and a function addIngredients
     const [mealText, setMealText] = useState("")
     const [formDisabled, setFormDisabled] = useState(false)
     console.log(`on Meal_Service component load formDisabled is set to: ${formDisabled}`)
+    const [isAILoading, setIsAILoading] = useState(false)
 
     // this is used below to send as a prop to the Meal_AI component, in the Meal_AI.jsx
     const mealSection = useRef(null) // if using this on a DOM node best practice to set to null
@@ -30,6 +32,7 @@ export default function Meal_Service() {
     useEffect(() => {
         console.log(`entered useEffect for formDisabled, status is: ${formDisabled}`)
         setFormDisabled(false)
+        setIsAILoading(false)
     }, [mealText])
 
     useEffect(() => {
@@ -60,12 +63,13 @@ export default function Meal_Service() {
         }        
     }
      
-    function toggleForm() {
-        setFormDisabled(!formDisabled)
-    }
+    // function toggleForm() {
+    //     setFormDisabled(!formDisabled)
+    // }
     
     function disableUserForm(formData) {
         setFormDisabled(true)
+        setIsAILoading(true)
         console.log('🔵 2. Set form disabled to true')
         getSCDMeal(formData)
     }
@@ -80,6 +84,8 @@ export default function Meal_Service() {
     return (
         <>
             <main>
+                {isAILoading && <div className='loading-spinner'><LoadingSpinner /></div>}
+
                 <div className='ai-service-container'>
                 <div className='text-3xl'>Adapt a Regular Meal to SCD</div>
                 <p>Do you miss a favorite meal that is not allowed on SCD? Enter the meal name or a brief description below and SCD Coach will adapt it to the SCD!</p>

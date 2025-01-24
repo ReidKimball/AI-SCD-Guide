@@ -7,12 +7,14 @@ import { getRecipeFromChefClaude } from '../ai.js'
 import { Button } from '@mui/material'
 import { CirclePlus } from 'lucide-react'
 import TextField from '@mui/material/TextField';
+import { LoadingSpinner } from './LoadingSpinner.jsx'
 
 export default function Recipe_Service() {
     // create an empty state array called ingredients and a function addIngredients
     const [ingredients, setIngredients] = useState([])
     const [recipeText, setRecipeText] = useState('')
     const [formDisabled, setFormDisabled] = useState(false)
+    const [isAILoading, setIsAILoading] = useState(false)
 
     // this is used below to send as a prop to the IngredientsList component, and in the IngredientsList.jsx
     const recipeSection = useRef(null) // if using this on a DOM node best practice to set to null
@@ -30,6 +32,7 @@ export default function Recipe_Service() {
     useEffect(() => {
         console.log(`entered useEffect for formDisabled, status is: ${formDisabled}`)
         setFormDisabled(false)
+        setIsAILoading(false)
     }, [recipeText])
 
     useEffect(() => {
@@ -53,6 +56,7 @@ export default function Recipe_Service() {
 
     function disableUserForm(formData) {
         setFormDisabled(true)
+        setIsAILoading(true)
         console.log('🔵 2. Set form disabled to true')
         getRecipe()
     }
@@ -60,6 +64,8 @@ export default function Recipe_Service() {
     return (
         <>
             <main>
+                {isAILoading && <div className='loading-spinner'><LoadingSpinner /></div>}
+
                 <div className='ai-service-container'>
                     <div className='text-3xl'>Create a Meal from Ingredients</div>
                     <p>Have a list of ingredients but don't know what SCD meals to make? Enter your ingredients one at a time to get a recipe suggestion. You need at least 4 to ask SCD Coach for recommendations.</p>
